@@ -1,0 +1,12 @@
+# Environnement virtuel Python
+__pycache__/
+venv/
+.venv/
+env/
+
+# Fichiers de configuration sensibles
+.env
+
+# IDE (VS Code / PyCharm)
+.vscode/
+.idea/

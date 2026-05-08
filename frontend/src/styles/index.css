@@ -1,0 +1,411 @@
+/* ─────────────────────────────────────────────
+   AirSafe AI — Global Styles
+   ───────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green:  #639922;
+  --blue:   #378ADD;
+  --amber:  #BA7517;
+  --red:    #E24B4A;
+  --text:   #111827;
+  --muted:  #9CA3AF;
+  --card:   #ffffff;
+  --page:   #F5F7FA;
+  --border: #E5E7EB;
+  --font:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: #D1D5DB;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* ── Phone Frame ── */
+.phone {
+  width: 300px;
+  border-radius: 32px;
+  background: var(--page);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #C1C7D0;
+  box-shadow: 0 0 0 6px #1C1C1E, 0 24px 64px rgba(0,0,0,.35);
+  min-height: 620px;
+}
+
+/* ── Status Bar ── */
+.status-bar {
+  background: var(--page);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px 4px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+/* ── Screen Container ── */
+.screens {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: none;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+.screen::-webkit-scrollbar { display: none; }
+.screen.active { display: block; }
+
+/* ── Bottom Nav ── */
+.bottom-nav {
+  background: var(--card);
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0 10px;
+  flex-shrink: 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  padding: 2px 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-item span {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+
+.nav-item.active span { color: var(--blue); }
+
+/* ── Page Header ── */
+.page-header {
+  padding: 8px 12px 6px;
+  background: var(--page);
+}
+.page-header .greeting {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.page-header .location-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2px;
+}
+.page-header h1 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.page-header .date {
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 500;
+}
+.badge-green { background: #EBF3DA; color: var(--green); }
+.badge-blue  { background: #DAE9F8; color: var(--blue);  }
+.badge-amber { background: #F5E9D6; color: var(--amber); }
+.badge-red   { background: #FAE0E0; color: var(--red);   }
+
+/* ── Sensor Grid ── */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 0 12px 8px;
+}
+
+.sensor-card {
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 9px 10px;
+}
+
+.sensor-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.sensor-icon-box {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-bar-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-top: 6px;
+}
+
+.mini-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* ── Forecast Strip ── */
+.forecast-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 4px;
+}
+
+.forecast-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Map ── */
+.map-container {
+  margin: 0 12px 8px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 0.5px solid var(--border);
+}
+
+/* ── Symptom Buttons ── */
+.symptom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 0 12px 8px;
+}
+
+.symptom-btn {
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--font);
+}
+
+.symptom-btn.active {
+  border-color: var(--blue);
+  background: #EFF6FF;
+}
+
+.symptom-btn span {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.symptom-btn.active span { color: var(--blue); }
+
+/* ── Slider ── */
+.intensity-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+  outline: none;
+  cursor: pointer;
+}
+.intensity-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--blue);
+}
+.intensity-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid #fff;
+}
+
+/* ── Activity Selector ── */
+.activity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  margin: 0 12px 8px;
+}
+
+.activity-btn {
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 9px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--font);
+}
+
+.activity-btn.active {
+  border-color: var(--green);
+  background: #F0F7E4;
+}
+
+.activity-btn span {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.activity-btn.active span { color: var(--green); }
+
+/* ── Submit Button ── */
+.submit-btn {
+  margin: 4px 12px 8px;
+  width: calc(100% - 24px);
+  padding: 11px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: opacity 0.15s;
+}
+.submit-btn:active { opacity: 0.8; }
+
+/* ── AI Response ── */
+.ai-response {
+  margin: 0 12px 8px;
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 9px;
+  color: var(--muted);
+  line-height: 1.6;
+  min-height: 60px;
+}
+
+/* ── History Table ── */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.history-table th {
+  font-size: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  padding: 4px 0;
+  text-align: left;
+  border-bottom: 0.5px solid var(--border);
+}
+.history-table td {
+  font-size: 9px;
+  color: var(--text);
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.history-table tr:last-child td { border-bottom: none; }
+
+/* ── Formula Box ── */
+.formula-box {
+  background: var(--page);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 8px;
+  font-size: 9px;
+  color: var(--text);
+  font-family: monospace;
+  line-height: 1.6;
+}
+
+/* ── Legend Grid ── */
+.legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Alert Card ── */
+.alert-card {
+  background: #FEF2F2;
+  border: 0.5px solid #FCA5A5;
+  border-radius: 12px;
+  margin: 0 12px 8px;
+  padding: 10px 12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
