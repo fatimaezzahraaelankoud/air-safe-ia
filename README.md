@@ -96,7 +96,7 @@ Le circuit IoT est simulé avec **Wokwi** — un simulateur Arduino/ESP32 en lig
 ### 1. Cloner le projet
 
 ```bash
-git clone https://github.com/votre-repo/airsafe-fullstack.git
+git clone https://github.com/fatimaezzahraaelankoud/airsafe-fullstack.git
 cd airsafe-fullstack
 ```
 
@@ -316,4 +316,4 @@ Prédit la **probabilité de crise respiratoire** dans les 6 prochaines heures �
 ---
 
 
-Projet académique — Tous droits réservés © 2025
+Projet académique — Tous droits réservés © 2026
