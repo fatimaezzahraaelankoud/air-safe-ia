@@ -28,7 +28,7 @@
 ```
 ┌─────────────────┐     HTTP/10s      ┌─────────────────┐
 │  Circuit Wokwi  │ ────────────────► │                 │
-│  (ESP32 simulé) │                   │  Backend FastAPI │
+│   │                   │  Backend FastAPI │
 └─────────────────┘                   │  Python 3.11    │
                                       │                 │
 ┌─────────────────┐     REST API      │  ┌───────────┐  │
@@ -56,7 +56,7 @@
 | **Base de données** | MongoDB (Atlas cloud ou local) |
 | **IA / ML** | Scikit-learn (Random Forest, K-Means) + NumPy + Pandas |
 | **Authentification** | JWT (python-jose + bcrypt) |
-| **Simulation IoT** | Wokwi ESP32 (circuit virtuel) |
+| **Simulation IoT** | Wokwi  (circuit virtuel) |
 | **Géolocalisation** | Navigator.geolocation + Nominatim (OpenStreetMap) |
 
 ---
@@ -69,7 +69,6 @@ Le circuit IoT est simulé avec **Wokwi** — un simulateur Arduino/ESP32 en lig
 |---------|--------|-----|
 | **DHT22** | Température + Humidité | D4 |
 | **MQ-7** | CO (0–1000 ppm) | A34 |
-| **MQ-135** | CO₂ (400–5000 ppm) | A35 |
 | **PMS5003** | PM2.5 (0–300 µg/m³) | A32 |
 | **LCD I2C** | Affichage IER + Zone | SDA=21, SCL=22 |
 | **LEDs** | Zone A/B/C/D | D26/27/14/12 |
